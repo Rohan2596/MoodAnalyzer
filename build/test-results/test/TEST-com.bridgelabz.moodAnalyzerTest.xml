@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.moodAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T05:00:24" hostname="abc-Lenovo-V130-15IKB" time="0.003">
+<testsuite name="com.bridgelabz.moodAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-26T05:16:21" hostname="abc-Lenovo-V130-15IKB" time="0.003">
   <properties/>
-  <testcase name="given_message_shouldReturn_SAD" classname="com.bridgelabz.moodAnalyzerTest" time="0.003"/>
-  <system-out><![CDATA[SAD
+  <testcase name="given_message_ShouldReturn_Happy_noparameter_Contructors" classname="com.bridgelabz.moodAnalyzerTest" time="0.003"/>
+  <system-out><![CDATA[HAPPY
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -9,7 +9,7 @@ public class moodAnalyzerTest {
 
     @Test
     public void given_message_shouldReturn_SAD(){
-        moodAnalyzer=new MoodAnalyzer("I am in Sad Mood");
+        moodAnalyzer=new MoodAnalyzer("I am in SAD Mood");
 
         String returnMessage=moodAnalyzer.analyseMood();
         System.out.println(returnMessage);
@@ -23,6 +23,18 @@ public class moodAnalyzerTest {
         String returnMessage=moodAnalyzer.analyseMood();
         System.out.println(returnMessage);
         Assert.assertEquals("HAPPY",returnMessage);
+    }
+
+    @Test
+    public void given_message_ShouldReturn_Happy_noparameter_Contructors(){
+        moodAnalyzer=new MoodAnalyzer();
+        try {
+            String returnMessage = moodAnalyzer.analyseMood();
+            System.out.println(returnMessage);
+        }catch (NullPointerException n) {
+
+            Assert.assertEquals("HAPPY", n.getMessage());
+        }
     }
 
 }
