@@ -9,20 +9,28 @@ public class moodAnalyzerTest {
 
     @Test
     public void given_message_shouldReturn_SAD(){
-        moodAnalyzer=new MoodAnalyzer("I am in SAD Mood");
+        moodAnalyzer=new MoodAnalyzer("I am in Sad Mood");
+        try {
+            String returnMessage = moodAnalyzer.analyseMood();
+            System.out.println(returnMessage);
+        }catch (MoodAnalysisException m) {
+            Assert.assertEquals("MOOD",m.getMessage());
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL,m.exceptionType);
 
-        String returnMessage=moodAnalyzer.analyseMood();
-        System.out.println(returnMessage);
-        Assert.assertEquals("SAD",returnMessage);
-
+        }
     }
 
     @Test
     public void given_message_shouldReturn_HAPPY(){
         moodAnalyzer=new MoodAnalyzer("I am  in Any Mood");
-        String returnMessage=moodAnalyzer.analyseMood();
-        System.out.println(returnMessage);
-        Assert.assertEquals("HAPPY",returnMessage);
+        try {
+            String returnMessage = moodAnalyzer.analyseMood();
+            System.out.println(returnMessage);
+        }catch (MoodAnalysisException m){
+        Assert.assertEquals("MOOD",m.getMessage());
+        Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL,m.exceptionType);
+
+        }
     }
 
     @Test
@@ -31,9 +39,23 @@ public class moodAnalyzerTest {
         try {
             String returnMessage = moodAnalyzer.analyseMood();
             System.out.println(returnMessage);
-        }catch (NullPointerException n) {
+        }catch (MoodAnalysisException m) {
 
-            Assert.assertEquals("HAPPY", n.getMessage());
+            Assert.assertEquals("MOOD", m.getMessage());
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL,m.exceptionType);
+        }
+    }
+
+    @Test
+    public void given_message_isEmpty(){
+        moodAnalyzer=new  MoodAnalyzer("");
+        try {
+            String returnMessage = moodAnalyzer.analyseMood();
+            System.out.println(returnMessage);
+        }catch (MoodAnalysisException m) {
+
+            Assert.assertEquals("MOOD", m.getMessage());
+            Assert.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY,m.exceptionType);
         }
     }
 
