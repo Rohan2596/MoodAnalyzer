@@ -27,7 +27,8 @@ public class MoodAnalyzer {
     }
 
     public boolean equals(Object object){
-        if(this.message.equals(((MoodAnalyzer)object).message)){
+
+        if((this.message).equals(((MoodAnalyzer)object).message)){
     return true;
     }
     return false;
